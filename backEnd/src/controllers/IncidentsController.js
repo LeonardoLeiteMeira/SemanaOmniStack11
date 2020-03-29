@@ -32,9 +32,14 @@ module.exports = {
         "ongs.email"
       );
 
+    const data = {
+      incidentsList: incidents,
+      conut: count["count(*)"]
+    };
+
     response.header("X-Total-Count", count["count(*)"]);
 
-    return response.json(incidents);
+    return response.json(data);
   },
 
   async delete(request, response) {
